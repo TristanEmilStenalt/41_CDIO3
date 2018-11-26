@@ -20,7 +20,7 @@ public final class GUI_FieldFactory {
     private GUI_FieldFactory() {
     }
 
-    public static void GUI_Field[] makeFields() {
+    public static GUI_Field[] createFields() {
         // Now contains the relevant strings for fields
         GUI_Field[] fields = new GUI_Field[40];
         int i = 0;

@@ -4,9 +4,11 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        MonopolyGUI init = new MonopolyGUI();
-        init.test();
-    }
 
+        MonopolyGUI guiTest = new MonopolyGUI();
+        guiTest.test();
+
+
+    }
 
 }

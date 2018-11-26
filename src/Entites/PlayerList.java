@@ -9,15 +9,15 @@ public class PlayerList {
     private Player player4 = new Player("playerFour", 0,0);
     private Player[] thePlayers = {player1,player2,player3,player4};
 
-    public PlayerList (Player[] thePlayers) //Constructor
+    public PlayerList () //Constructor
     {
         this.thePlayers = thePlayers;
     }
 
 
-    public Player[] createPlayerList() //createPlayerList method, basically get method.
-    {
-        return thePlayers;
-    }
+//    public Player[] createPlayerList() //createPlayerList method, basically get method.
+//    {
+//        return thePlayers;
+//    }
 
 }
