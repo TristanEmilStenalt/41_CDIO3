@@ -16,16 +16,15 @@ public class  MonopolyGUI{
     {
         GUI_Field[] fields = GUI_FieldFactory.createFields();
 
-        GUI_Player[] playerList = PlayerList.createPlayerList(3);
-
-
         GUI gui = new GUI(fields, Color.WHITE);
+        int numberOfPlayers = gui.getUserInteger("How many players are you? ");
+        GUI_Player[] playerList = PlayerList.createPlayerList(numberOfPlayers);
 
-        gui.addPlayer(playerList[0]);
-        gui.addPlayer(playerList[1]);
-        gui.addPlayer(playerList[2]);
-
-
+        for(int i=1;i<=numberOfPlayers;i++) {
+            gui.addPlayer(playerList[i-1]);
+            String name = gui.getUserString("Name of Player"+i+": ");
+            playerList[i-1].setName(name);
+        }
     }
 
 
