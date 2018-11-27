@@ -6,8 +6,7 @@ public class Main {
 	// write your code here
 
         MonopolyGUI guiTest = new MonopolyGUI();
-        guiTest.fieldCreation();
-
+        guiTest.boardSetup();
     }
 
 }
