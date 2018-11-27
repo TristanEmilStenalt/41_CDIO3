@@ -52,4 +52,8 @@ public final class GUI_FieldFactory {
         fields[var2++] = new GUI_Street("Strandpromenaden", "Pris: M4$", "Strandpromenaden", "Leje: M4$", new Color(0,191,255), Color.BLACK);
         return fields;
     }
+
+
+
+
 }

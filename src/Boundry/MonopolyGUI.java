@@ -37,7 +37,6 @@ public class  MonopolyGUI{
         fields[0].setCar(gui_Player3, true);
         fields[0].setCar(gui_Player4, true);
 
-
     }
 
 
