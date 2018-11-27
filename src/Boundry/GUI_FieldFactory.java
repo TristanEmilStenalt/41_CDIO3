@@ -17,7 +17,9 @@ import gui_fields.GUI_Tax;
 import java.awt.Color;
 
 public final class GUI_FieldFactory {
-    private GUI_FieldFactory() {
+    private GUI_FieldFactory()
+    {
+
     }
 
     public static GUI_Field[] createFields() {

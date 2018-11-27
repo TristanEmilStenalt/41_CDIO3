@@ -4,26 +4,26 @@ import java.util.Random;
 public class Dice{
 
     //Constructor of player-object
-    private int Sides;
+    private int sides;
     /**
      * Dice is initiated with a Sides Attribute
      *
-     * @see Sides                   Sides of the dice, "how many different values can it show"
+     * @see sides                   Sides of the dice, "how many different values can it show"
      *
-     * @param Sides                 Sides of the dice, "how many different values can it show"
+     * @param sides                 Sides of the dice, "how many different values can it show"
      *
      * @return void
      * @author Hans P Byager , Tristan
      * @date   08.11.2018
      */
-    public Dice(int Sides){
-        this.Sides = this.Sides;
+    public Dice(int sides){
+        this.sides = this.sides;
     }
 
     /**
      * Dice needs to recieve an Integer Array after being initiated, such that it knows what values are on what sides of the dice object
      *
-     * @see SidesNum                  different values on different sides of the dice
+     * @see sidesNum                  different values on different sides of the dice
      *
      * @param SidesNum                different values on different sides of the dice
      *
@@ -31,7 +31,7 @@ public class Dice{
      * @author Hans P Byager , Tristan
      * @date   08.11.2018
      */
-    private int[] SidesNum = new int[Sides];
+    private int[] SidesNum = new int[sides];
     public void DiceSidesNumDecider(int[] SidesNum){
         this.SidesNum = SidesNum;
     }
@@ -62,7 +62,7 @@ public class Dice{
      */
     public int getSides()
     {
-        return Sides;
+        return sides;
     }
     /**
      * setSides gives the Dice a new Sides Value
@@ -74,33 +74,8 @@ public class Dice{
      */
     public void setSides(int Sides)
     {
-        this.Sides = Sides;
+        this.sides = Sides;
     }
 
-    //get & set SidesNum
-    /**
-     * GetSidesNum returns an Integer Array of the different Values on the Different Dice Sides
-     *
-     * @return int[]
-     * @author Hans P Byager, Tristan
-     * @date   08.11.2018
-     */
-    public int[] getSidesNum()
-    {
-        return SidesNum;
-    }
-    /**
-     * Gives the Dice new Values on the different sides of the dice.
-     *
-     * @param SidesNum      an Integer Array that has the size of (Sides) and has the Values of the dice's Sides.
-     *
-     * @return Void
-     * @author Hans P Byager, Tristan
-     * @date   08.11.2018
-     */
-    public void setSidesNum(int[] SidesNum)
-    {
-        this.SidesNum = SidesNum;
-    }
 
 }
