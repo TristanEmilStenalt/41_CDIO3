@@ -8,7 +8,6 @@ public class Main {
         MonopolyGUI guiTest = new MonopolyGUI();
         guiTest.test();
 
-
     }
 
 }
