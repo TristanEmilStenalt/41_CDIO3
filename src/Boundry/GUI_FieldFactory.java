@@ -22,11 +22,12 @@ public final class GUI_FieldFactory {
 
     public static GUI_Field[] createFields() {
         // Now contains the relevant strings for fields
-        GUI_Field[] fields = new GUI_Field[40];
+        GUI_Field[] fields = new GUI_Field[24];
         int i = 0;
         int var2 = i + 1;
+        //First color is fieldColor, Second color is fieldtext/name.
         fields[i] = new GUI_Start("Start", "Modtag: M2$", "Modtag M2$\nNår du passerer", Color.RED, Color.BLACK);
-        fields[var2++] = new GUI_Street("Burgerbaren", "Pris:  M1$", "Burgerbaren", "Leje: M1$", new Color(75, 155, 225), Color.BLACK);
+        fields[var2++] = new GUI_Street("Burgerbaren", "Pris:  M1$", "Burgerbaren", "Leje: M1$", new Color(204, 204, 204), Color.BLACK);
         fields[var2++] = new GUI_Street("Pizzariaet", "Pris: M1$", "Pizzariaet","Leje: M1$", new Color(204, 204, 204), Color.BLACK);
         fields[var2++] = new GUI_Chance("?", "Chance", "Prøv lykken!", new Color(75, 155, 225), Color.BLACK);
         fields[var2++] = new GUI_Street("Slikbutikken", "Pris: M1$", "Slikbutikken","Leje: M1$", new Color(204, 204, 204), Color.BLACK);
