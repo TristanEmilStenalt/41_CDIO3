@@ -11,6 +11,9 @@ import java.awt.*;
 
 
 public class  MonopolyGUI{
+    public GUI_Player[] playerList;
+    public GUI_Field[] fields;
+    public GUI gui;
 
     public void boardSetup() //forsøg på at bruge GUI. opsætning af bræt.
     {
@@ -25,6 +28,7 @@ public class  MonopolyGUI{
             gui.addPlayer(playerList[i - 1]);
             String name = gui.getUserString("Name of Player" + i + ": ");
             playerList[i - 1].setName(name);
+            fields[0].setCar(playerList[i-1],true);
             if(numberOfPlayers==2){
                 playerList[i-1].setBalance(20);
             }
@@ -35,6 +39,8 @@ public class  MonopolyGUI{
                 playerList[i-1].setBalance(16);
             }
         }
+
+        return; // Returns back to Main, and starts the game
     }
     else{
         String restart = gui.getUserString("Please choose between 2 and 4 players...Restart by pressing OK");
