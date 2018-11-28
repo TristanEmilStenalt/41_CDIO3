@@ -28,7 +28,7 @@ public class Game extends MonopolyGUI {
                 //Now the player has rolled. Before he puts the car on the new field, the car is removed from the previous
                 fields[playerPositionArray[i-1]].removeAllCars();
                 playerPositionArray[i-1]+=roll;
-                playerPositionArray[i-1]=playerPositionArray[i-1]%fields.length;
+                playerPositionArray[i-1]=playerPositionArray[i-1]%fields.length; //makes sure that the player will move over the starting field properly
                 System.out.println("Player " + i + " rolled: " + roll); // used for debugging in console
                 System.out.println(roll);
                 fields[playerPositionArray[i-1]].setCar(playerList[i-1],true); // This sets the new position of the car.
