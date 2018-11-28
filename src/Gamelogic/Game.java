@@ -11,26 +11,22 @@ public class Game extends MonopolyGUI {
         rollDice = rand.nextInt(6)+1;
          return rollDice;
     }
-
-    public void playerTurn(){
-        System.out.println("dank memes");
-
-
+    public int playerPositionArray[]={0,0,0,0};
+    public void playerTurn() {
         boolean run = true;
-        while(run=true){
+        System.out.println("Number of players: " + playerList.length);
+        while (run = true) {
+            for (int i = 1; i <= playerList.length; i++) {
+                MonopolyGUI rollText = new MonopolyGUI();
+                rollText.guiGameText();
 
-            for(int i=1;i<=playerList.length;i++){
-
-                position = rollDice();
-                String rollTurn = gui.getUserString("Player "+i+" Press ok to roll.");
+                fields[playerPositionArray[i-1]].removeAllCars();
+                playerPositionArray[i-1]=+rollDice();
+                System.out.println("Player " + i + " rolled: " + playerPositionArray[i-1]); // used for debugging in console
                 System.out.println(rollDice);
-                fields[position].setCar(playerList[i-1],true);
-
+                fields[playerPositionArray[i-1]].setCar(playerList[i - 1], true);
                 // fields[]
-               // playerList[i].getCar().
-
             }
         }
     }
-
 }

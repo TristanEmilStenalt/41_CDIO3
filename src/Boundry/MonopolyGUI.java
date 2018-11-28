@@ -11,20 +11,21 @@ import java.awt.*;
 
 
 public class  MonopolyGUI{
-    public GUI_Player[] playerList;
-    public GUI_Field[] fields;
-    public GUI gui;
+    public static GUI_Player[] playerList;
+    public static GUI_Field[] fields;
+    public static GUI gui;
 
     public void boardSetup() //forsøg på at bruge GUI. opsætning af bræt.
     {
-        GUI_Field[] fields = GUI_FieldFactory.createFields();
+        fields = GUI_FieldFactory.createFields();
 
-        GUI gui = new GUI(fields, Color.WHITE);
+        gui = new GUI(fields, Color.WHITE);
         int numberOfPlayers = gui.getUserInteger("How many players are you? ");
 
         if (numberOfPlayers >= 2 && numberOfPlayers<=4){
-        GUI_Player[] playerList = PlayerList.createPlayerList(numberOfPlayers);
-        for (int i = 1; i <= numberOfPlayers; i++) {
+            playerList = PlayerList.createPlayerList(numberOfPlayers);
+
+            for (int i = 1; i <= numberOfPlayers; i++) {
             gui.addPlayer(playerList[i - 1]);
             String name = gui.getUserString("Name of Player" + i + ": ");
             playerList[i - 1].setName(name);
@@ -46,5 +47,10 @@ public class  MonopolyGUI{
         String restart = gui.getUserString("Please choose between 2 and 4 players...Restart by pressing OK");
         boardSetup();
     }
+    }
+
+    public void guiGameText(){
+        String rollTurn = gui.getUserString("Press ok to roll.");
+        return;
     }
 }
