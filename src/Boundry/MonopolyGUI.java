@@ -50,7 +50,7 @@ public class  MonopolyGUI{
     }
 
     public void guiGameText(){
-        String rollTurn = gui.getUserString("Press ok to roll.");
+
         return;
     }
 }
