@@ -20,7 +20,7 @@ public class Game extends MonopolyGUI {
         boolean run = true;
         System.out.println("Number of players: " + playerList.length);
                                                                                                      // This while loop is currently set to run indefinitely so we can keep testing the diceRoll
-        while (run = true) {
+        while (playerList[0].getBalance()>0||playerList[1].getBalance()>0||playerList[2].getBalance()>0 ||playerList[3].getBalance()>0) {
             playerCount=0; // Starts at player 1, which has index=0
             for (int i = 1; i <= playerList.length; i++) {
 
@@ -28,7 +28,6 @@ public class Game extends MonopolyGUI {
                 MonopolyGUI rollText = new MonopolyGUI();
                 String rollTurn = gui.getUserString("Press ok to roll.");
                 rollDice();
-
                                                                                                       // Now the player has rolled. Before he puts the car on the new field, the car is removed from the previous
                 fields[playerPositionArray[playerCount]].removeAllCars();
                 playerPositionArray[playerCount]+=roll;
@@ -43,6 +42,7 @@ public class Game extends MonopolyGUI {
                 playerCount++;
             }
         }
+        gui.showMessage("Somebody lost! The game has ended!");
     }
     public void payRent(){
       //  isOwner();
