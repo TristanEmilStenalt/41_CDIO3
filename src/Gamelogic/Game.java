@@ -37,6 +37,7 @@ public class Game extends MonopolyGUI {
                 System.out.println(roll);
                 gui.setDie(roll);
                 fields[playerPositionArray[playerCount]].setCar(playerList[playerCount],true); // This sets the new position of the car.
+                if (playerPositionArray[playerCount])
                 gui.showMessage("You rolled "+roll+" and landed on "+playerPositionArray[i-1]);
                 // fields[]
                 playerCount++;
