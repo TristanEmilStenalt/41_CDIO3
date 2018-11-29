@@ -24,7 +24,6 @@ public class  MonopolyGUI{
 
         if (numberOfPlayers >= 2 && numberOfPlayers<=4){
             playerList = PlayerList.createPlayerList(numberOfPlayers);
-
             for (int i = 1; i <= numberOfPlayers; i++) {
             gui.addPlayer(playerList[i - 1]);
             String name = gui.getUserString("Name of Player" + i + ": ");
