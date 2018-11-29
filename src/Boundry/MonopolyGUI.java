@@ -46,6 +46,10 @@ public class  MonopolyGUI{
         String restart = gui.getUserString("Please choose between 2 and 4 players...Restart by pressing OK");
         boardSetup();
     }
+
+
+
+
     }
 
     public void guiGameText(){
