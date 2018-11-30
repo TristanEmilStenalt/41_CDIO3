@@ -9,7 +9,6 @@ public class GameTurn extends Game {
         playerCount = 0; // Starts at player 1, which has index=0
         Rent pay = new Rent();
         for (int i = 0; i < playerList.length; i++) {
-
             // Prompts in the UI for the player to roll the dice.
             MonopolyGUI rollText = new MonopolyGUI();
             String rollTurn = gui.getUserString("Press ok to roll.");

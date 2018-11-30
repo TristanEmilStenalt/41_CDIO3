@@ -9,17 +9,28 @@ public class Game extends MonopolyGUI {
     public String ownershipArray[] = {"", "Unowned", "Unowned", "", "Unowned", "Unowned", "", "Unowned", "Unowned", "", "Unowned", "Unowned", "", "Unowned", "Unowned", "", "Unowned", "Unowned", "", "Unowned", "Unowned", "", "Unowned", "Unowned",};
     public int playerCount; // This number keeps track of who's turn it is, by counting playerList
     public int rentArray[] = {-2,1,1,0,1,1,0,2,2,0,2,2,0,3,3,0,3,3,0,4,4,0,4,4};
-
     public int playerPositionArray[]={0,0,0,0};
+
+
+
+
 
     public void playerTurn() {
         GameTurn takeTurn = new GameTurn();
         System.out.println("Number of players: " + playerList.length);
+
+
+        boolean run=true;
         // This while loop is currently set to run indefinitely so we can keep testing the diceRoll
-        while (playerList[0].getBalance()>0&&playerList[1].getBalance()>0&&playerList[2].getBalance()>0&&playerList[3].getBalance()>0) {
+        while (playerList[playerCount].getBalance()>0) {
             takeTurn.turn();
         }
     }
+
+
+
+
+
 
     public int rollDice(){
         Random rand = new Random(); //Make an instance of Random
