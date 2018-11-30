@@ -24,8 +24,6 @@ public class GameTurn extends Game {
             }                                                                                           // Makes sure that the player will move over the starting field properly
           //  payRent();// Now we know where the player is on the board. Time to pay rent!
             hasOwner();
-            System.out.println("Player " + i+1 + " rolled: " + roll);                               // Used for debugging in console
-            System.out.println(roll);
             gui.setDie(roll);
             fields[playerPositionArray[playerCount]].setCar(playerList[playerCount], true); // This sets the new position of the car.
             gui.showMessage("You rolled " + roll + " and landed on " + playerPositionArray[i]);
