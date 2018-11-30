@@ -31,12 +31,6 @@ public class Game extends MonopolyGUI {
 
 
 
-
-    public int rollDice(){
-        Random rand = new Random(); //Make an instance of Random
-        roll = rand.nextInt(6)+1;
-        return roll;
-    }
     public void buyProperty(){
       //  isOwner();
         int playerBalance = playerList[playerCount].getBalance();

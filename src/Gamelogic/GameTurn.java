@@ -1,10 +1,13 @@
 package Gamelogic;
 
 import Boundry.MonopolyGUI;
+import Entites.Dice;
 
 import java.security.acl.Owner;
 
 public class GameTurn extends Game {
+    Dice Die = new Dice(6);
+
     public void turn() {
         playerCount = 0; // Starts at player 1, which has index=0
         Rent pay = new Rent();
@@ -12,7 +15,7 @@ public class GameTurn extends Game {
             // Prompts in the UI for the player to roll the dice.
             MonopolyGUI rollText = new MonopolyGUI();
             String rollTurn = gui.getUserString("Press ok to roll.");
-            rollDice();
+            int roll = Die.roll();
 
             // Now the player has rolled. Before he puts the car on the new field, the car is removed from the previous
             fields[playerPositionArray[playerCount]].removeAllCars();
