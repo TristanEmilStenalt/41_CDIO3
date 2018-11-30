@@ -23,18 +23,17 @@ public class Game extends MonopolyGUI {
                 // Prompts in the UI for the player to roll the dice.
                 MonopolyGUI rollText = new MonopolyGUI();
                 String rollTurn = gui.getUserString("Press ok to roll.");
-                rollRes = Die.roll();
+                int roll = Die.roll();
                                                                                                       // Now the player has rolled. Before he puts the car on the new field, the car is removed from the previous
                 fields[playerPositionArray[playerCount]].removeAllCars();
-                playerPositionArray[playerCount]+=Die.rollRes;
+                playerPositionArray[playerCount]+=roll;
                 playerPositionArray[playerCount]=playerPositionArray[playerCount]%fields.length;      // Makes sure that the player will move over the starting field properly
                 payRent();                                                                            // Now we know where the player is on the board. Time to pay rent!
-                System.out.println("Player " + i + " rolled: " + Die.rollRes);                               // Used for debugging in console
-                System.out.println(Die.rollRes);
-                gui.setDie(Die.rollRes);
+                System.out.println("Player " + i + " rolled: " + roll);                               // Used for debugging in console
+                System.out.println(roll);
+                gui.setDie(roll);
                 fields[playerPositionArray[playerCount]].setCar(playerList[playerCount],true); // This sets the new position of the car.
-                if (playerPositionArray[playerCount])
-                gui.showMessage("You rolled "+Die.rollRes+" and landed on "+playerPositionArray[i-1]);
+                gui.showMessage("You rolled "+roll+" and landed on "+playerPositionArray[i-1]);
                 // fields[]
                 playerCount++;
             }
