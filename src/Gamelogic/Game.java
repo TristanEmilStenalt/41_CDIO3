@@ -5,12 +5,8 @@ import java.util.*;
 
 public class Game extends MonopolyGUI {
     public int position;
-    public int roll;
-    public int rollDice(){
-        Random rand = new Random(); //Make an instance of Random
-        roll = rand.nextInt(6)+1;
-         return roll;
-    }
+   Dice Die = new Dice(6);
+
     public int playerCount; // This number keeps track of who's turn it is, by counting playerList
 
     public int rentArray[] = {-2,1,1,0,1,1,0,2,2,0,2,2,0,3,3,0,3,3,0,4,4,0,4,4};
@@ -27,18 +23,18 @@ public class Game extends MonopolyGUI {
                 // Prompts in the UI for the player to roll the dice.
                 MonopolyGUI rollText = new MonopolyGUI();
                 String rollTurn = gui.getUserString("Press ok to roll.");
-                rollDice();
+                rollRes = Die.roll();
                                                                                                       // Now the player has rolled. Before he puts the car on the new field, the car is removed from the previous
                 fields[playerPositionArray[playerCount]].removeAllCars();
-                playerPositionArray[playerCount]+=roll;
+                playerPositionArray[playerCount]+=Die.rollRes;
                 playerPositionArray[playerCount]=playerPositionArray[playerCount]%fields.length;      // Makes sure that the player will move over the starting field properly
                 payRent();                                                                            // Now we know where the player is on the board. Time to pay rent!
-                System.out.println("Player " + i + " rolled: " + roll);                               // Used for debugging in console
-                System.out.println(roll);
-                gui.setDie(roll);
+                System.out.println("Player " + i + " rolled: " + Die.rollRes);                               // Used for debugging in console
+                System.out.println(Die.rollRes);
+                gui.setDie(Die.rollRes);
                 fields[playerPositionArray[playerCount]].setCar(playerList[playerCount],true); // This sets the new position of the car.
                 if (playerPositionArray[playerCount])
-                gui.showMessage("You rolled "+roll+" and landed on "+playerPositionArray[i-1]);
+                gui.showMessage("You rolled "+Die.rollRes+" and landed on "+playerPositionArray[i-1]);
                 // fields[]
                 playerCount++;
             }
